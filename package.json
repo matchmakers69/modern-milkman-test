@@ -4,7 +4,6 @@
   "private": true,
   "dependencies": {
     "axios": "^0.21.1",
-    "http-proxy-middleware": "^1.0.6",
     "lodash": "^4.17.20",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
@@ -30,6 +29,7 @@
     "lint": "eslint --ignore-path .gitignore ./src",
     "eject": "react-scripts eject"
   },
+  "proxy": "https://mm-react-fe-interview-task.herokuapp.com",
   "eslintConfig": {
     "extends": [
       "react-app",
