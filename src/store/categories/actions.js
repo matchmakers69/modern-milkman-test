@@ -25,4 +25,10 @@ export const failureFetchingCtegories = error => ({
 
 export const fetchCategoriesData = () => async dispatch => {
   dispatch(startFetchingCategories());
+  try {
+    const response = await fetchCategories();
+    dispatch(setCategoriesData(response));
+  } catch (error) {
+    dispatch(failureFetchingCtegories());
+  }
 };
