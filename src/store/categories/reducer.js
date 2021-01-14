@@ -19,9 +19,18 @@ const categoriesReducer = (state = objInitialState, action) => {
         isError: false,
       };
     case FETCHING_CATEGORIES_SUCCESS:
+      const { data } = action.payload;
+
+      const updatedCategoriesById = data.map((category, index) => {
+        return {
+          ...category,
+          id: index + 1,
+        };
+      });
+
       return {
         ...state,
-        categories: action.payload.data,
+        categories: updatedCategoriesById,
         isLoading: false,
       };
     case FETCHING_CATEGORIES_FAILURE:

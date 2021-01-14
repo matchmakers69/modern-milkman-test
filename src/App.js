@@ -1,16 +1,19 @@
 import React from 'react';
 import Routes from 'routes';
-import { BrowserRouter as Router, Switch } from 'react-router-dom';
+import { Switch } from 'react-router-dom';
 import MainTemplate from 'templates/MainTemplate';
+import NavigationSidebar from 'components/common/NavigationSidebar';
 
 const App = () => {
   return (
     <MainTemplate>
-      <Router>
+      <>
+        <NavigationSidebar />
+
         <Switch>
           <Routes />
         </Switch>
-      </Router>
+      </>
     </MainTemplate>
   );
 };
