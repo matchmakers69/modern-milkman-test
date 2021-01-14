@@ -3,8 +3,9 @@ import constants from '../constants';
 import { Switch, Route, useLocation, Redirect } from 'react-router';
 
 const Home = lazy(() => import('containers/Home'));
+const Category = lazy(() => import('containers/Category'));
 
-const { ROOT } = constants;
+const { ROOT, CATEGORY } = constants;
 
 const Routes = () => {
   const { pathname } = useLocation();
@@ -13,6 +14,7 @@ const Routes = () => {
       <Switch>
         <Redirect from="/:url*(/+)" to={pathname.slice(0, -1)} />
         <Route exact path={ROOT} component={Home} />
+        <Route exact path={CATEGORY} component={Category} />
       </Switch>
     </Suspense>
   );
