@@ -20,6 +20,11 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
+    "lint:js": "eslint ./src/**/*.{js,jsx} --cache",
+    "format": "prettier --write --ignore-path .gitignore \"**/*.+(js|json|jsx|md|mdx)\"",
+    "lint:pretty": "prettier --write --config .prettierrc src/**/*.{js,jsx}",
+    "validate": "npm run format && npm run lint",
+    "lint": "eslint --ignore-path .gitignore ./src",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
