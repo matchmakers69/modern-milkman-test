@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { useParams } from 'react-router-dom';
+import Layout from 'Layout';
 import { useSelector } from 'react-redux';
 
 const Category = () => {
@@ -24,7 +25,11 @@ const Category = () => {
     };
   }, [categories, id, objFound]);
   if (objCategory) {
-    return <div>Hello I am category {objCategory.title}</div>;
+    return (
+      <Layout>
+        <div>Hello I am category {objCategory.title}</div>
+      </Layout>
+    );
   }
   return null;
 };
