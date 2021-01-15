@@ -3,10 +3,12 @@ import { composeWithDevTools } from 'redux-devtools-extension';
 import { applyMiddleware, combineReducers, createStore } from 'redux';
 import { createBrowserHistory } from 'history';
 import { connectRouter, routerMiddleware } from 'connected-react-router';
+import uiReducer from 'store/ui/reducer';
 import categoriesReducer from 'store/categories/reducer';
 
 export const history = createBrowserHistory();
 const appReducer = combineReducers({
+  uiState: uiReducer,
   categoriesState: categoriesReducer,
   router: connectRouter(history),
 });
