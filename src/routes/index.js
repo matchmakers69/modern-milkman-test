@@ -1,22 +1,47 @@
-import React, { Suspense, lazy } from 'react';
+import React, { lazy } from 'react';
 import constants from '../constants';
-import { Switch, Route, useLocation, Redirect } from 'react-router';
+import { Switch, useLocation, Redirect, Route } from 'react-router';
+import ErrorPage from 'containers/ErrorPage';
+import MilkmanAppRoute from 'components/common/MilkmanAppRoute';
 
 const Home = lazy(() => import('containers/Home'));
 const Category = lazy(() => import('containers/Category'));
 
-const { ROOT, CATEGORY } = constants;
+const { ROOT, CATEGORY, ERROR_URL } = constants;
+
+const getPageTitle = title => `${title} - Milkman Application test`;
+
+const routerMapper = [
+  {
+    path: ROOT,
+    title: getPageTitle('Milkman Home Page'),
+    component: Home,
+  },
+
+  {
+    path: CATEGORY,
+    title: getPageTitle('Milkman Category Page'),
+    component: Category,
+  },
+];
 
 const Routes = () => {
   const { pathname } = useLocation();
   return (
-    <Suspense fallback={<div>Loading...</div>}>
-      <Switch>
-        <Redirect from="/:url*(/+)" to={pathname.slice(0, -1)} />
-        <Route exact path={ROOT} component={Home} />
-        <Route exact path={CATEGORY} component={Category} />
-      </Switch>
-    </Suspense>
+    <Switch>
+      <Redirect from="/:url*(/+)" to={pathname.slice(0, -1)} />
+      {routerMapper.map(route => (
+        <MilkmanAppRoute
+          key={route.path}
+          exact
+          path={route.path}
+          title={route.title}
+          ui={route.ui}
+          component={route.component}
+        />
+      ))}
+      <Route exact path={ERROR_URL} component={ErrorPage} />
+    </Switch>
   );
 };
 
