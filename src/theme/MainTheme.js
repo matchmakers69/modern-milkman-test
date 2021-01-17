@@ -1,5 +1,10 @@
 export const theme = {
   primary: '#130B58',
+  teal: '#20c997',
+  blueNav: '#6cc4d4',
+  white: '#FFF',
+  orange: '#fd7e14',
+  grey100: '#F0F0F0',
   light: 300,
   regular: 400,
   semiBold: 600,
