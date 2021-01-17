@@ -1,23 +1,23 @@
 import React from 'react';
 import _isEmpty from 'lodash/isEmpty';
-import { NavLink } from 'react-router-dom';
 import PropTypes from 'prop-types';
+import { NavList, NavListItem, NavListItemLink } from './NavigationList.styles';
 
 const NavigationList = ({ categories }) => {
   return (
-    <ul>
+    <NavList>
       {!_isEmpty(categories) && categories.length > 0 ? (
         categories.map(category => (
-          <li key={category.title}>
-            <NavLink to={`/category/${category.id}`}>
+          <NavListItem key={category.title}>
+            <NavListItemLink to={`/category/${category.id}`}>
               <span className="text-link">{category.title}</span>
-            </NavLink>
-          </li>
+            </NavListItemLink>
+          </NavListItem>
         ))
       ) : (
         <span>No data to display</span>
       )}
-    </ul>
+    </NavList>
   );
 };
 
