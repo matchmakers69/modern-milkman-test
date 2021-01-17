@@ -23,7 +23,7 @@ const BannerInfo = ({ displayBanner }) => {
               You can preview products either using filters below or use the
               navigation to be redirected to category page. Full description of
               the project and concepts can be found under README.md file.
-              Functionalitoes presented here have beemn done to represent the
+              Functionalities presented here have been done to represent the
               most accurate real life application.
             </Text>
           </BannerTextInner>
