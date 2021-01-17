@@ -12,6 +12,14 @@ const BackButton = ({ text, onClick }) => {
   );
 };
 
-BackButton.propTypes = {};
+BackButton.defaultProps = {
+  text: '',
+  onClick: () => {},
+};
+
+BackButton.propTypes = {
+  text: PropTypes.string,
+  onClick: PropTypes.func,
+};
 
 export default BackButton;

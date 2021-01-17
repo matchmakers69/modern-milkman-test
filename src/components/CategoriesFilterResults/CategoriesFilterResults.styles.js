@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import { theme } from 'theme/MainTheme';
 
 const FiltersWrapper = styled('div')`
   display: flex;

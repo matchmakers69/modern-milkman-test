@@ -33,6 +33,8 @@ const BannerInfo = ({ displayBanner }) => {
   );
 };
 
-BannerInfo.propTypes = {};
+BannerInfo.propTypes = {
+  displayBanner: PropTypes.bool.isRequired,
+};
 
 export default BannerInfo;

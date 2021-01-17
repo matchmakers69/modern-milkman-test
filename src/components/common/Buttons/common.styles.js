@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import { theme } from 'theme/MainTheme';
 
 const ButtonWrapper = styled('div')`
   margin-bottom: 20px;
