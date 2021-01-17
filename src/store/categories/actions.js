@@ -2,6 +2,8 @@ import {
   FETCHING_CATEGORIES_START,
   FETCHING_CATEGORIES_SUCCESS,
   FETCHING_CATEGORIES_FAILURE,
+  CHECK_FILTER_CATEGORY,
+  CLEAR_SELECTED_CATEGORIES,
 } from './types';
 import { fetchCategories } from 'utils/fetchCategories';
 
@@ -32,3 +34,14 @@ export const fetchCategoriesData = () => async dispatch => {
     dispatch(failureFetchingCtegories());
   }
 };
+
+export const toggleFilterProductsSelected = category => ({
+  type: CHECK_FILTER_CATEGORY,
+  payload: {
+    category,
+  },
+});
+
+export const clearSelectedCategories = () => ({
+  type: CLEAR_SELECTED_CATEGORIES,
+});
