@@ -20,8 +20,11 @@ const BannerInfo = ({ displayBanner }) => {
         <BannerText>
           <BannerTextInner>
             <Text>
-              Plase use the filter below to display products on the home Page.
-              You can use the navigation on the left side
+              You can preview products either using filters below or use the
+              navigation to be redirected to category page. Full description of
+              the project and concepts can be found under README.md file.
+              Functionalitoes presented here have beemn done to represent the
+              most accurate real life application.
             </Text>
           </BannerTextInner>
         </BannerText>

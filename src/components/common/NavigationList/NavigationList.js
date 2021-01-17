@@ -21,6 +21,12 @@ const NavigationList = ({ categories }) => {
   );
 };
 
-NavigationList.propTypes = {};
+NavigationList.defaultProps = {
+  categories: [],
+};
+
+NavigationList.propTypes = {
+  categories: PropTypes.arrayOf(PropTypes.instanceOf(Object)),
+};
 
 export default NavigationList;
